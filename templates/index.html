@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <meta http-equiv="refresh" content="30">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153713085-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-176978373-1');
+    </script>
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/styles.css">
+    <title>Está de cumpleaños Agustina?</title>
+  </head>
+  <body>
+    {%if si_cumple%}
+      <!--<h1>Si! Feliz cumpleaños!!</h1>-->
+      <h1 class="display-1">Si! Feliz cumpleaños!</h1>
+    {%elif falta == 1%}
+      <h1 class="display-1">No, hoy no.</h1>
+      <h1 class="display-2">Falta {{falta}} día.</h1>
+    {%elif falta > 1%}
+      <h1 class="display-1">No, hoy no.</h1>
+      <h1 class="display-2">Faltan {{falta}} días.</h1>
+    {%else%}
+      <h1 class="display-1">No, hoy no.</h1>
+      <h1 class="display-2">Pero faltan {{horas}} horas!</h1>
+    {%endif%}
+      <h1>
+    {%if falta > 30 and si_cumple!=1%}
+      <span class="badge badge-success">Tranqui, queda ene, {{segs}}</span>
+    {%elif falta <= 30 and falta >=7 and si_cumple!=1 %}
+      <span class="badge badge-warning">Queda poco! {{segs}}</span>
+    {%elif si_cumple!=1%}
+      <span class="badge badge-danger">Ojo! Queda muy poco! {{segs}}</span>
+    {%endif%}
+    </h1>
+    <blockquote class="blockquote text-center">
+      <p class="mb-0"><br>Domingo 18 de Abril de 2021: Amina paso de largo durmiendo por
+        primera vez, desde las 18:30 hasta las 06:30! Con 8 meses. =)</p>
+      <footer class="blockquote-footer">Siiii!!! <cite title="Source Title">Kika,
+          feliz despertando</cite></footer> </blockquote>
+    <blockquote class="blockquote text-center">
+      <p class="mb-0"><br>Martes 14 de Junio de 2022: Agus le dice Angela que quiere hacer pipi, 
+    		ella la sienta en la taza... y hace.. primera vez!</p>
+      <footer class="blockquote-footer">Siiii!!! <cite title="Source Title">Kika,
+          feliz despertando</cite></footer>
+    </blockquote>
+  </body>
+</html>
